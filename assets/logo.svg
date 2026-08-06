@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 96 96"
+     role="img"
+     aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Knowledge Center logo</title>
+  <desc id="logoDesc">A minimalist animated open book and compass symbol with a transparent background.</desc>
+
+  <defs>
+    <linearGradient id="brandGradient" x1="16" y1="12" x2="80" y2="84" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5FF2BD"/>
+      <stop offset="0.5" stop-color="#65D9FF"/>
+      <stop offset="1" stop-color="#9A7CFF"/>
+    </linearGradient>
+
+    <linearGradient id="bookGradient" x1="27" y1="52" x2="69" y2="76" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F3FFF9"/>
+      <stop offset="1" stop-color="#BDF7E3"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .logo-root {
+      transform-origin: 48px 48px;
+      transition: transform .35s ease;
+    }
+
+    .orbit {
+      transform-origin: 48px 48px;
+      animation: orbit-drift 14s linear infinite;
+    }
+
+    .needle {
+      transform-origin: 48px 37px;
+      animation: needle-sway 5s ease-in-out infinite;
+    }
+
+    .book-left {
+      transform-origin: 48px 57px;
+      animation: book-left 4.8s ease-in-out infinite;
+    }
+
+    .book-right {
+      transform-origin: 48px 57px;
+      animation: book-right 4.8s ease-in-out infinite;
+    }
+
+    .glow {
+      transform-origin: 48px 48px;
+      animation: glow-breathe 4.5s ease-in-out infinite;
+    }
+
+    .spark {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: sparkle 7s ease-in-out infinite;
+    }
+
+    .spark-2 { animation-delay: 2.1s; }
+    .spark-3 { animation-delay: 4.2s; }
+
+    svg:hover .logo-root {
+      transform: scale(1.045);
+    }
+
+    @keyframes orbit-drift {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    @keyframes needle-sway {
+      0%, 100% { transform: rotate(-4deg); }
+      50%      { transform: rotate(7deg); }
+    }
+
+    @keyframes book-left {
+      0%, 100% { transform: rotate(0deg); }
+      50%      { transform: rotate(-3deg); }
+    }
+
+    @keyframes book-right {
+      0%, 100% { transform: rotate(0deg); }
+      50%      { transform: rotate(3deg); }
+    }
+
+    @keyframes glow-breathe {
+      0%, 100% { opacity: .20; transform: scale(.94); }
+      50%      { opacity: .46; transform: scale(1.08); }
+    }
+
+    @keyframes sparkle {
+      0%, 78%, 100% { opacity: 0; transform: scale(.55) rotate(0deg); }
+      84%           { opacity: 1; transform: scale(1.15) rotate(18deg); }
+      90%           { opacity: .35; transform: scale(.8) rotate(28deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .orbit, .needle, .book-left, .book-right, .glow, .spark {
+        animation: none !important;
+      }
+      .logo-root {
+        transition: none;
+      }
+    }
+  </style>
+
+  <g class="logo-root">
+    <!-- Soft animated glow -->
+    <circle class="glow"
+            cx="48" cy="48" r="29"
+            fill="url(#brandGradient)"
+            opacity=".26"/>
+
+    <!-- Minimal casino-chip / compass orbit -->
+    <g class="orbit" opacity=".92">
+      <circle cx="48" cy="48" r="37"
+              fill="none"
+              stroke="url(#brandGradient)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-dasharray="7 8"/>
+
+      <circle cx="48" cy="11" r="2.25" fill="#5FF2BD"/>
+      <circle cx="85" cy="48" r="2.25" fill="#65D9FF"/>
+      <circle cx="48" cy="85" r="2.25" fill="#9A7CFF"/>
+      <circle cx="11" cy="48" r="2.25" fill="#5FF2BD"/>
+    </g>
+
+    <!-- Compass -->
+    <g filter="url(#softGlow)">
+      <circle cx="48" cy="37" r="13.5"
+              fill="#0D2B24"
+              stroke="url(#brandGradient)"
+              stroke-width="2"/>
+
+      <circle cx="48" cy="37" r="8.5"
+              fill="none"
+              stroke="#FFFFFF"
+              stroke-opacity=".22"
+              stroke-width="1"/>
+
+      <g class="needle">
+        <path d="M48 23.5L53 37L48 50.5L43 37Z"
+              fill="#FFD166"/>
+        <path d="M48 23.5L48 50.5"
+              stroke="#FFF2B8"
+              stroke-width=".9"
+              stroke-linecap="round"/>
+      </g>
+
+      <circle cx="48" cy="37" r="2.7" fill="#FFF4C7"/>
+    </g>
+
+    <!-- Open book -->
+    <g>
+      <path class="book-left"
+            d="M24 54.5C32.8 51.8 40.4 53.2 48 58.6V77.5C39.9 72.1 31.9 70.5 24 73.2V54.5Z"
+            fill="url(#bookGradient)"/>
+
+      <path class="book-right"
+            d="M72 54.5C63.2 51.8 55.6 53.2 48 58.6V77.5C56.1 72.1 64.1 70.5 72 73.2V54.5Z"
+            fill="url(#bookGradient)"/>
+
+      <path d="M48 58.6V77.5"
+            stroke="#0D4B3C"
+            stroke-width="1.8"
+            stroke-linecap="round"/>
+
+      <path d="M29 59.4C35.1 57.9 40.2 59 44.8 61.7"
+            fill="none"
+            stroke="#55B89A"
+            stroke-width="1.3"
+            stroke-linecap="round"/>
+
+      <path d="M67 59.4C60.9 57.9 55.8 59 51.2 61.7"
+            fill="none"
+            stroke="#55B89A"
+            stroke-width="1.3"
+            stroke-linecap="round"/>
+    </g>
+
+    <!-- Tiny sparkles -->
+    <g fill="#FFD166">
+      <path class="spark"
+            d="M20 29L21.4 32.2L24.7 33.5L21.4 34.8L20 38L18.6 34.8L15.3 33.5L18.6 32.2L20 29Z"/>
+
+      <path class="spark spark-2"
+            d="M75 22L76 24.3L78.4 25.2L76 26.2L75 28.5L74 26.2L71.6 25.2L74 24.3L75 22Z"/>
+
+      <path class="spark spark-3"
+            d="M77 65L78.1 67.5L80.7 68.5L78.1 69.5L77 72L75.9 69.5L73.3 68.5L75.9 67.5L77 65Z"/>
+    </g>
+  </g>
+</svg>
