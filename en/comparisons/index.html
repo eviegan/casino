@@ -241,6 +241,38 @@
       margin-bottom:16px;
     }
 
+    .browser-back-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:38px;
+      height:38px;
+      margin-right:8px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      color:#44516a;
+      text-decoration:none;
+      font-size:21px;
+      font-weight:800;
+      box-shadow:var(--shadow-soft);
+      cursor:pointer;
+      transition:.2s;
+    }
+
+    .browser-back-btn:hover{
+      color:var(--primary);
+      border-color:#c7d7f8;
+      transform:translateY(-2px);
+    }
+
+    .back-row{
+      display:flex;
+      align-items:center;
+      gap:0;
+    }
+
+
     .back-btn{
       display:inline-flex;
       align-items:center;
@@ -355,7 +387,7 @@
       color:#344054;
     }
 
-    /* COMPARISON HERO MAP */
+    /* COMPARISON HERO MAP — FIXED NODE/LINK POSITIONING */
     .comparison-map{
       position:relative;
       z-index:2;
@@ -366,9 +398,32 @@
 
     .map-stage{
       position:relative;
-      width:min(100%,430px);
+      width:min(100%,440px);
       height:360px;
       animation:floatCard 5.5s ease-in-out infinite;
+    }
+
+    .map-links{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      z-index:1;
+      overflow:visible;
+      pointer-events:none;
+    }
+
+    .map-links line{
+      stroke:url(#compareLineGradient);
+      stroke-width:2.2;
+      stroke-linecap:round;
+      opacity:.95;
+    }
+
+    .map-links circle{
+      fill:#fff;
+      stroke:#cdd8ff;
+      stroke-width:2;
     }
 
     .map-core{
@@ -393,14 +448,19 @@
 
     .vs-node{
       position:absolute;
-      min-width:126px;
-      padding:12px 14px;
+      transform:translate(-50%,-50%);
+      width:132px;
+      min-height:48px;
+      padding:10px 12px;
+      display:grid;
+      place-items:center;
       border:1px solid #dfe6f2;
-      border-radius:16px;
-      background:rgba(255,255,255,.97);
-      box-shadow:var(--shadow-soft);
+      border-radius:15px;
+      background:rgba(255,255,255,.98);
+      box-shadow:0 12px 30px rgba(39,55,88,.12);
       font-weight:800;
-      font-size:12px;
+      font-size:11px;
+      line-height:1.25;
       text-align:center;
       z-index:3;
       animation:pulseNode 4.5s ease-in-out infinite;
@@ -408,31 +468,16 @@
 
     .vs-node b{
       color:var(--primary);
-      margin:0 5px;
+      margin:0 3px;
+      white-space:nowrap;
     }
 
-    .vs-node:nth-of-type(2){left:0;top:8%}
-    .vs-node:nth-of-type(3){right:-1%;top:10%;animation-delay:.4s}
-    .vs-node:nth-of-type(4){left:-2%;bottom:18%;animation-delay:.8s}
-    .vs-node:nth-of-type(5){right:-2%;bottom:17%;animation-delay:1.2s}
-    .vs-node:nth-of-type(6){left:50%;transform:translateX(-50%);bottom:-2%;animation-delay:1.6s}
-
-    .map-line{
-      position:absolute;
-      left:50%;
-      top:50%;
-      width:150px;
-      height:2px;
-      transform-origin:left center;
-      background:linear-gradient(90deg,rgba(53,109,243,.55),rgba(122,90,248,.2));
-      z-index:1;
-    }
-
-    .line1{transform:rotate(215deg)}
-    .line2{transform:rotate(325deg)}
-    .line3{transform:rotate(145deg)}
-    .line4{transform:rotate(35deg)}
-    .line5{transform:rotate(90deg);width:130px}
+    .node-rtp{left:24%;top:18%}
+    .node-bonus{left:76%;top:18%;animation-delay:.3s}
+    .node-slots{left:16%;top:50%;animation-delay:.6s}
+    .node-rng{left:84%;top:50%;animation-delay:.9s}
+    .node-pix{left:28%;top:82%;animation-delay:1.2s}
+    .node-crypto{left:72%;top:82%;animation-delay:1.5s}
 
     .hub{
       max-width:var(--max);
@@ -1008,17 +1053,22 @@
       .brand-copy small{display:none}
       .hero{margin-top:24px;padding:0 14px}
       .back-row{margin-bottom:12px}
-      .back-btn{width:100%;justify-content:center}
+      .browser-back-btn{flex:0 0 42px;width:42px;height:42px;margin-right:8px}
+      .back-btn{flex:1;width:auto;justify-content:center}
       .hero-card{padding:28px 22px;border-radius:24px}
       h1{font-size:42px}
       .hero-actions{flex-direction:column}
       .btn{width:100%}
-      .comparison-map{min-height:300px}
-      .map-stage{height:285px}
-      .map-core{width:105px;height:105px;border-radius:24px;font-size:14px}
-      .vs-node{min-width:102px;padding:9px 10px;font-size:10px}
-      .map-line{width:110px}
-      .line5{width:95px}
+      .comparison-map{min-height:315px}
+      .map-stage{height:300px;width:min(100%,390px)}
+      .map-core{width:102px;height:102px;border-radius:23px;font-size:13px}
+      .vs-node{width:106px;min-height:42px;padding:8px 7px;font-size:9px;border-radius:12px}
+      .node-rtp{left:24%;top:16%}
+      .node-bonus{left:76%;top:16%}
+      .node-slots{left:15%;top:50%}
+      .node-rng{left:85%;top:50%}
+      .node-pix{left:28%;top:84%}
+      .node-crypto{left:72%;top:84%}
       .hub{padding:0 14px 56px}
       .section{margin-top:42px}
       .section-head{align-items:start;flex-direction:column}
@@ -1050,8 +1100,18 @@
     }
 
     @media(max-width:420px){
-      .vs-node:nth-of-type(2){left:-5%;top:7%}
-      .vs-node:nth-of-type(3){right:-5%;top:9%}
+      .comparison-map{min-height:300px}
+      .map-stage{height:285px;width:100%}
+      .map-core{width:94px;height:94px;font-size:12px}
+      .vs-node{width:94px;min-height:40px;font-size:8.5px;padding:7px 6px}
+      .node-rtp{left:25%;top:15%}
+      .node-bonus{left:75%;top:15%}
+      .node-slots{left:15%;top:50%}
+      .node-rng{left:85%;top:50%}
+      .node-pix{left:28%;top:85%}
+      .node-crypto{left:72%;top:85%}
+    }
+.vs-node:nth-of-type(3){right:-5%;top:9%}
       .vs-node:nth-of-type(4){left:-6%;bottom:12%}
       .vs-node:nth-of-type(5){right:-6%;bottom:12%}
     }
@@ -1098,6 +1158,7 @@
     <section class="hero">
 
       <div class="back-row">
+        <button class="browser-back-btn" type="button" onclick="history.back()" aria-label="Go back">‹</button>
         <a class="back-btn" href="/casino/">← Back to Knowledge Center</a>
       </div>
 
@@ -1123,19 +1184,38 @@
         <div class="comparison-map" aria-hidden="true">
           <div class="map-stage">
 
-            <div class="map-line line1"></div>
-            <div class="map-line line2"></div>
-            <div class="map-line line3"></div>
-            <div class="map-line line4"></div>
-            <div class="map-line line5"></div>
+            <svg class="map-links" viewBox="0 0 440 360" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="compareLineGradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#8fb0ff"/>
+                  <stop offset="100%" stop-color="#a993ff"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Center = 220,180 -->
+              <line x1="220" y1="180" x2="106" y2="65"></line>
+              <line x1="220" y1="180" x2="334" y2="65"></line>
+              <line x1="220" y1="180" x2="70" y2="180"></line>
+              <line x1="220" y1="180" x2="370" y2="180"></line>
+              <line x1="220" y1="180" x2="123" y2="295"></line>
+              <line x1="220" y1="180" x2="317" y2="295"></line>
+
+              <circle cx="106" cy="65" r="4"></circle>
+              <circle cx="334" cy="65" r="4"></circle>
+              <circle cx="70" cy="180" r="4"></circle>
+              <circle cx="370" cy="180" r="4"></circle>
+              <circle cx="123" cy="295" r="4"></circle>
+              <circle cx="317" cy="295" r="4"></circle>
+            </svg>
 
             <div class="map-core">COMPARE<br>SMARTER</div>
 
-            <div class="vs-node">RTP <b>VS</b> Volatility</div>
-            <div class="vs-node">Bonus <b>VS</b> Cashback</div>
-            <div class="vs-node">Slots <b>VS</b> Live</div>
-            <div class="vs-node">PIX <b>VS</b> Card</div>
-            <div class="vs-node">Crypto <b>VS</b> Card</div>
+            <div class="vs-node node-rtp">RTP <b>VS</b> Volatility</div>
+            <div class="vs-node node-bonus">Bonus <b>VS</b> Cashback</div>
+            <div class="vs-node node-slots">Slots <b>VS</b> Live Casino</div>
+            <div class="vs-node node-rng">RNG <b>VS</b> Live Dealer</div>
+            <div class="vs-node node-pix">Credit Card <b>VS</b> PIX</div>
+            <div class="vs-node node-crypto">Crypto <b>VS</b> Credit Card</div>
 
           </div>
         </div>
