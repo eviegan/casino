@@ -33,8 +33,8 @@
 <meta property="og:image" content="https://YOUR-DOMAIN.com/assets/how-kyc-works-og.jpg">
 <meta property="og:image:alt" content="How KYC Works">
 <meta property="article:section" content="Security">
-<meta property="article:published_time" content="2026-08-12T00:00:00+08:00">
-<meta property="article:modified_time" content="2026-08-12T00:00:00+08:00">
+<meta property="article:published_time" content="2026-08-21T00:00:00+08:00">
+<meta property="article:modified_time" content="2026-08-21T00:00:00+08:00">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How Casino KYC Works: Identity Verification, Documents &amp; Checks">
@@ -114,8 +114,8 @@
       "image": [
         "https://YOUR-DOMAIN.com/assets/how-kyc-works-og.jpg"
       ],
-      "datePublished": "2026-08-12T00:00:00+08:00",
-      "dateModified": "2026-08-12T00:00:00+08:00",
+      "datePublished": "2026-08-21T00:00:00+08:00",
+      "dateModified": "2026-08-21T00:00:00+08:00",
       "author": {
         "@type": "Organization",
         "name": "Knowledge Center Editorial Team"
@@ -195,6 +195,24 @@ h1,h2,h3{font-family:"Manrope",sans-serif;line-height:1.12;letter-spacing:-.04em
 @media(max-width:680px){.header-inner{min-height:68px;padding:0 16px}.brand img{width:42px;height:42px}.brand-copy small{display:none}.mobile-section-bar{top:72px}.hero{margin-top:82px;padding:0 14px}.hero-card{padding:28px 22px;border-radius:24px}h1{font-size:42px}.layout{padding:0 14px 56px;margin-top:28px}.article{padding:24px 18px;border-radius:22px}.grid2,.grid3,.links{grid-template-columns:1fr}.term-row{grid-template-columns:1fr;gap:6px}.hero-actions{flex-direction:column}.btn{width:100%}}
 @media(max-width:420px){.mobile-section-bar{top:70px;width:calc(100% - 20px)}.mobile-current-section{font-size:12.5px}.hero{margin-top:80px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+/* ===== Security chapter standard additions ===== */
+.desktop-nav a.active{color:var(--primary);background:var(--surface-blue)}
+.chapter-back-wrap{max-width:var(--max);margin:28px auto 0;padding:0 22px}
+.chapter-back{display:inline-flex;align-items:center;gap:9px;min-height:42px;padding:0 15px;border:1px solid #d9e2f0;border-radius:12px;background:rgba(255,255,255,.94);box-shadow:0 8px 24px rgba(39,55,88,.07);text-decoration:none;color:#43516a;font-size:14px;font-weight:800;transition:.2s}
+.chapter-back:hover{color:var(--primary-dark);border-color:#c4d5f4;background:var(--surface-blue);transform:translateX(-2px)}
+.chapter-back-arrow{color:var(--primary);font-size:18px;line-height:1}
+.external-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.source-card{display:flex;flex-direction:column;min-width:0;transition:.2s}.source-card:hover{transform:translateY(-3px);border-color:#c6d7f5;box-shadow:var(--shadow-soft)}
+.source-platform{display:inline-flex;align-items:center;align-self:flex-start;min-height:27px;padding:0 9px;margin-bottom:12px;border-radius:999px;color:var(--primary-dark)!important;background:var(--surface-blue);font-size:10px!important;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
+.source-card small{margin-top:auto;padding-top:12px}.source-note{margin-top:18px;padding:16px 18px;border-radius:14px;color:#5e6879;background:#f7f9fc;border:1px solid var(--line);font-size:13px}
+.professional-box{margin-top:24px;padding:22px;border:1px solid #dbe4f2;border-radius:18px;background:linear-gradient(135deg,#f8fbff,#faf9ff)}
+.professional-kicker{display:inline-block;margin-bottom:8px;color:var(--primary);font-size:11px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}.professional-box h3{margin-bottom:14px}.check-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.check-grid>div{padding:12px 14px;border:1px solid #e2e8f2;border-radius:12px;background:#fff;color:#4d5a70;font-size:14px}
+.hero{margin-top:18px}
+@media(max-width:980px){.chapter-back-wrap{margin-top:86px}.hero{margin-top:16px}.external-grid{grid-template-columns:1fr}}
+@media(max-width:680px){.chapter-back-wrap{margin-top:84px;padding:0 14px}.chapter-back{min-height:40px;padding:0 13px;font-size:13px}.hero{margin-top:14px}.check-grid{grid-template-columns:1fr}.article{min-width:0}.table-wrap{max-width:100%;-webkit-overflow-scrolling:touch}}
+@media(max-width:420px){.chapter-back-wrap{margin-top:82px;padding:0 10px}.hero{margin-top:12px}}
+
 </style>
 </head>
 <body>
@@ -212,9 +230,9 @@ h1,h2,h3{font-family:"Manrope",sans-serif;line-height:1.12;letter-spacing:-.04em
       <a href="/casino/en/payment/">Payments</a>
       <a href="/casino/en/bonuses/">Bonuses</a>
       <a href="/casino/en/providers/">Providers</a>
-      <a href="/casino/en/security/">Security</a>
+      <a class="active" href="/casino/en/security/">Security</a>
     </nav>
-    <button class="menu-btn" type="button" aria-label="Open navigation" id="menuBtn">☰</button>
+    <button class="menu-btn" type="button" aria-label="Open navigation" aria-expanded="false" id="menuBtn">☰</button>
   </div>
 </header>
 
@@ -237,13 +255,15 @@ h1,h2,h3{font-family:"Manrope",sans-serif;line-height:1.12;letter-spacing:-.04em
 <a class="mobile-toc-link" href="#documents"><span class="mobile-toc-number">04</span><span class="mobile-toc-label">Documents a casino may request</span><span class="mobile-toc-arrow">›</span></a>
 <a class="mobile-toc-link" href="#extra"><span class="mobile-toc-number">05</span><span class="mobile-toc-label">Why additional KYC questions can appear later</span><span class="mobile-toc-arrow">›</span></a>
 <a class="mobile-toc-link" href="#safe"><span class="mobile-toc-number">06</span><span class="mobile-toc-label">How to upload KYC documents more safely</span><span class="mobile-toc-arrow">›</span></a>
-<a class="mobile-toc-link" href="#reference"><span class="mobile-toc-number">07</span><span class="mobile-toc-label">Regulatory reference</span><span class="mobile-toc-arrow">›</span></a>
+<a class="mobile-toc-link" href="#reference"><span class="mobile-toc-number">07</span><span class="mobile-toc-label">Worth reading elsewhere</span><span class="mobile-toc-arrow">›</span></a>
 <a class="mobile-toc-link" href="#related"><span class="mobile-toc-number">08</span><span class="mobile-toc-label">Related guides</span><span class="mobile-toc-arrow">›</span></a>
 <a class="mobile-toc-link" href="#faq"><span class="mobile-toc-number">09</span><span class="mobile-toc-label">FAQ</span><span class="mobile-toc-arrow">›</span></a>
       </nav>
     </div>
   </div>
 </div>
+
+<div class="chapter-back-wrap"><a class="chapter-back" href="/casino/en/security/"><span class="chapter-back-arrow">←</span><span>Back to Security</span></a></div>
 
 <section class="hero">
   <div class="hero-card">
@@ -276,9 +296,13 @@ h1,h2,h3{font-family:"Manrope",sans-serif;line-height:1.12;letter-spacing:-.04em
 <section class="section reveal" id="why"><h2>2. Why casinos verify identity</h2><div class="grid2"><div class="info-card"><div class="icon">18+</div><h3>Age and identity</h3><p>Verification helps establish that the account belongs to a real person and that applicable age requirements are met.</p></div><div class="info-card"><div class="icon">AML</div><h3>Financial-crime controls</h3><p>Customer due diligence supports anti-money-laundering and related regulatory obligations.</p></div><div class="info-card"><div class="icon">ACC</div><h3>Account protection</h3><p>Identity checks can help prevent stolen identities, duplicate accounts and unauthorized account changes.</p></div><div class="info-card"><div class="icon">PAY</div><h3>Payment ownership</h3><p>Operators may need to understand whether payment methods and funds are connected appropriately to the verified customer.</p></div></div></section>
 <section class="section reveal" id="flow"><h2>3. A typical KYC flow</h2><div class="term-list"><div class="term-row"><strong>Step 1 — Details</strong><p>The customer provides information such as legal name, date of birth and address.</p></div><div class="term-row"><strong>Step 2 — Electronic check</strong><p>The operator may compare the details against reliable independent data sources.</p></div><div class="term-row"><strong>Step 3 — Documents</strong><p>If electronic checks are insufficient, identity or address documents may be requested.</p></div><div class="term-row"><strong>Step 4 — Review</strong><p>Automated systems or a verification team assesses whether the information is consistent and acceptable.</p></div><div class="term-row"><strong>Step 5 — Ongoing checks</strong><p>Operators may need to keep customer information accurate and perform further due diligence when circumstances or risk change.</p></div></div></section>
 <section class="section reveal" id="documents"><h2>4. Documents a casino may request</h2><div class="table-wrap"><table><thead><tr><th>Document type</th><th>What it may help verify</th><th>Common checks</th></tr></thead><tbody><tr><td>Passport / national ID / driving licence</td><td>Name, date of birth, identity</td><td>Validity, document details, image quality and consistency with account data</td></tr><tr><td>Bank statement / utility statement</td><td>Address or account relationship</td><td>Name, address, recent date and document authenticity indicators</td></tr><tr><td>Payment evidence</td><td>Ownership or control of a payment method</td><td>Relevant account details while unnecessary sensitive data should be handled carefully</td></tr><tr><td>Source-of-funds evidence</td><td>Where particular funds came from</td><td>Income, sale proceeds, savings, business activity or other legitimate source depending on context</td></tr></tbody></table></div></section>
-<section class="section reveal" id="extra"><h2>5. Why additional KYC questions can appear later</h2><p>Verification is not always a one-time event. Regulators may require operators to keep identity information accurate and apply customer due diligence on a risk-sensitive basis.</p><div class="callout"><h3>KYC and source of funds are related, but not identical</h3><p>Basic KYC establishes identity. Additional due diligence may ask about the source or purpose of funds when financial-crime controls, transaction patterns or legal requirements make further understanding necessary.</p></div></section>
+<section class="section reveal" id="extra"><h2>5. Why additional KYC questions can appear later</h2><p>Verification is not always a one-time event. Regulators may require operators to keep identity information accurate and apply customer due diligence on a risk-sensitive basis.</p><div class="callout"><h3>KYC and source of funds are related, but not identical</h3><p>Basic KYC establishes identity. Additional due diligence may ask about the source or purpose of funds when financial-crime controls, transaction patterns or legal requirements make further understanding necessary.</p></div><div class="professional-box"><span class="professional-kicker">Know the difference</span><h3>KYC, source of funds and source of wealth</h3><div class="check-grid"><div><strong>KYC:</strong> who the customer is.</div><div><strong>Source of funds:</strong> where specific money used in the relationship came from.</div><div><strong>Source of wealth:</strong> how a person's overall wealth was accumulated.</div><div><strong>Ongoing due diligence:</strong> keeping customer information and risk understanding current.</div></div></div></section>
 <section class="section reveal" id="safe"><h2>6. How to upload KYC documents more safely</h2><div class="grid2"><div class="info-card"><div class="icon">URL</div><h3>Use the official upload channel</h3><p>Open the genuine casino account area rather than sending documents through an unknown link or social-media contact.</p></div><div class="info-card"><div class="icon">REQ</div><h3>Understand the request</h3><p>Check what document is needed, why it is being requested and which details must remain visible.</p></div><div class="info-card"><div class="icon">MASK</div><h3>Do not over-share</h3><p>Follow the operator’s instructions. Do not expose unrelated passwords, PINs or security codes.</p></div><div class="info-card"><div class="icon">LOG</div><h3>Keep a record</h3><p>Save confirmation of what was submitted and the official support case if a review is delayed.</p></div></div></section>
-<section class="section reveal" id="reference"><h2>7. Regulatory reference</h2><div class="grid2"><a class="source-card" href="https://www.gamblingcommission.gov.uk/licensees-and-businesses/lccp/condition/17-1-1-customer-identity-verification" target="_blank" rel="noopener noreferrer external"><strong>UK Gambling Commission — Customer Identity Verification</strong><span>Shows a concrete regulated example requiring remote operators to obtain and verify identity information before gambling.</span><small>Open regulator reference ↗</small></a><a class="source-card" href="https://www.gamblingcommission.gov.uk/guidance/the-prevention-of-money-laundering-and-combating-the-financing-of-terrorism/prevention-of-ml-and-combating-the-financing-of-terrorism-part-6-4-customer" target="_blank" rel="noopener noreferrer external"><strong>UK Gambling Commission — Customer Due Diligence</strong><span>Explains customer identification, identity verification and risk-sensitive due-diligence measures for casinos.</span><small>Open regulator reference ↗</small></a></div></section>
+<section class="section reveal" id="reference"><h2>7. Worth reading elsewhere</h2><p>KYC requirements depend on jurisdiction, but these regulator and standards resources show how identity verification and customer due diligence work in regulated environments.</p><div class="external-grid">
+<a class="source-card" href="https://www.gamblingcommission.gov.uk/licensees-and-businesses/lccp/condition/17-1-1-customer-identity-verification" target="_blank" rel="noopener noreferrer external"><span class="source-platform">UK Gambling Commission</span><strong>Customer Identity Verification</strong><span>A gambling-specific regulatory example covering identity information and verification requirements for remote operators.</span><small>Visit Gambling Commission ↗</small></a>
+<a class="source-card" href="https://www.gamblingcommission.gov.uk/blog/post/reminder-of-identity-verification-requirements-for-remote-operators" target="_blank" rel="noopener noreferrer external"><span class="source-platform">UK Gambling Commission</span><strong>Identity Verification Requirements for Remote Operators</strong><span>A 2026 regulator update discussing existing identity-verification requirements and transparency in the customer journey.</span><small>Read regulator update ↗</small></a>
+<a class="source-card" href="https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html" target="_blank" rel="noopener noreferrer external"><span class="source-platform">FATF</span><strong>The FATF Recommendations</strong><span>International AML/CFT standards that include customer due-diligence principles such as identifying and verifying customers using reliable information.</span><small>Visit FATF ↗</small></a>
+</div><div class="source-note"><strong>Jurisdiction note:</strong> These examples explain general regulatory concepts. The exact documents, timing and legal obligations for a casino depend on its licensed jurisdiction.</div></section>
 
   <section class="section reveal" id="related">
     <h2>Related guides</h2>
@@ -297,7 +321,7 @@ h1,h2,h3{font-family:"Manrope",sans-serif;line-height:1.12;letter-spacing:-.04em
 <details><summary>Why can a casino ask for documents after I already verified my account?</summary><p>Operators may need to keep customer information current or perform additional due diligence when transaction patterns, risk or legal obligations change.</p></details>
 <details><summary>Is source of funds the same as KYC?</summary><p>No. Basic KYC focuses on identity. Source-of-funds checks seek evidence about where money used in the relationship came from and are generally part of broader due diligence.</p></details></div>
     <div class="callout warning"><h3>Important security note</h3><p>Security controls, KYC requirements and account-recovery procedures vary by operator and jurisdiction. Use the genuine operator website or application and verify local rules before sending money, credentials or identity documents.</p></div>
-    <div class="editorial"><span><strong>Editorial purpose:</strong> Educational and security information only.</span><span><strong>Last updated:</strong> 12 August 2026</span></div>
+    <div class="editorial"><span><strong>Editorial purpose:</strong> Educational and security information only.</span><span><strong>Last updated:</strong> 21 August 2026</span></div>
   </section>
 </article>
 
@@ -308,7 +332,7 @@ h1,h2,h3{font-family:"Manrope",sans-serif;line-height:1.12;letter-spacing:-.04em
 <a href="#documents">Documents a casino may request</a>
 <a href="#extra">Why additional KYC questions can appear later</a>
 <a href="#safe">How to upload KYC documents more safely</a>
-<a href="#reference">Regulatory reference</a>
+<a href="#reference">Worth reading elsewhere</a>
 <a href="#related">Related guides</a>
 <a href="#faq">FAQ</a></nav></div>
   <div class="side-card"><h2>Security principle</h2><p class="note">Never rely on a single signal. Verify the domain, connection, account authentication and the legitimacy of the operator or support channel.</p></div>
