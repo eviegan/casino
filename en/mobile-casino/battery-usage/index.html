@@ -111,6 +111,109 @@ h1,h2,h3{font-family:"Manrope",sans-serif;line-height:1.12;letter-spacing:-.04em
   .flow-step b,.step b{width:32px;height:32px}
 }
 
+
+/* MOBILE BACK BUTTON FIX */
+.chapter-back-wrap{display:block!important;visibility:visible!important;opacity:1!important;position:relative;z-index:30}
+.chapter-back{display:inline-flex!important;visibility:visible!important;opacity:1!important}
+@media(max-width:980px){
+.chapter-back-wrap{display:block!important;width:100%!important;margin:14px auto 0!important;padding:0 14px!important}
+.chapter-back{display:flex!important;width:100%!important;min-height:44px!important;align-items:center!important;justify-content:flex-start!important;font-size:13px!important;padding:0 13px!important}
+}
+@media(max-width:680px){
+.chapter-back-wrap{display:block!important;margin:12px auto 0!important;padding:0 14px!important}
+.chapter-back{display:flex!important;visibility:visible!important;opacity:1!important;width:100%!important;max-width:none!important}
+}
+
+
+/* ===== FINAL MOBILE TOP NAV + BACK BUTTON LAYOUT ===== */
+@media(max-width:980px){
+  .mobile-section-bar{
+    position:fixed!important;
+    top:74px!important;
+    left:50%!important;
+    transform:translateX(-50%)!important;
+    z-index:90!important;
+  }
+
+  .chapter-back-wrap{
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    width:100%!important;
+    max-width:1180px!important;
+    margin:0 auto!important;
+    padding:76px 14px 0!important;
+    position:relative!important;
+    z-index:20!important;
+  }
+
+  .chapter-back{
+    display:inline-flex!important;
+    visibility:visible!important;
+    opacity:1!important;
+    width:auto!important;
+    max-width:100%!important;
+    min-height:40px!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:8px!important;
+    padding:0 13px!important;
+    font-size:12.5px!important;
+    border-radius:12px!important;
+    white-space:nowrap!important;
+  }
+
+  .hero{
+    margin-top:20px!important;
+  }
+}
+
+@media(max-width:680px){
+  .mobile-section-bar{
+    top:72px!important;
+  }
+
+  .chapter-back-wrap{
+    padding-top:72px!important;
+    padding-left:14px!important;
+    padding-right:14px!important;
+  }
+
+  .chapter-back{
+    min-height:40px!important;
+    font-size:12.5px!important;
+  }
+
+  .hero{
+    margin-top:18px!important;
+  }
+}
+
+@media(max-width:420px){
+  .mobile-section-bar{
+    top:70px!important;
+    width:calc(100% - 20px)!important;
+  }
+
+  .chapter-back-wrap{
+    padding-top:70px!important;
+    padding-left:10px!important;
+    padding-right:10px!important;
+  }
+
+  .chapter-back{
+    max-width:100%!important;
+    white-space:normal!important;
+    line-height:1.25!important;
+    padding-top:8px!important;
+    padding-bottom:8px!important;
+  }
+
+  .hero{
+    margin-top:16px!important;
+  }
+}
+
 </style>
 </head>
 <body>
